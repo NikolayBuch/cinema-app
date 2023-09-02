@@ -1,0 +1,91 @@
+@import "styles/color.scss";
+@import "styles/media.scss";
+
+.root {
+  max-width: 33.3333%;
+  width: 100%;
+  padding: 15px;
+
+  cursor: pointer;
+
+  transform: scale(1);
+  transition: transform 200ms ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @include media(lg) {
+    // max-width: 33.3333%;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+
+  height: 550px;
+
+  border-radius: 10px;
+
+  @include media (d) {
+    height: 450px;
+
+  }
+}
+
+.cover {
+  position: absolute;
+
+  width: 100%;
+  height: inherit;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.2) 100%);
+  }
+
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+.point {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 40px;
+  height: 28px;
+  margin-left: 10px;
+  margin-top: 10px;
+
+  border-radius: 5px;
+
+  text-align: center;
+  color: $white;
+}
+
+.green {
+  background: $greenPoint;
+}
+
+.gray {
+  background: $greyPoint;
+}

@@ -1,0 +1,33 @@
+@import "styles/media.scss";
+@import "styles/fontMixins.scss";
+
+.root {
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+.size {
+  &-h1 {
+    @include H1;
+  }
+
+  &-h2 {
+    @include H2;
+  }
+
+  &-h3 {
+    @include H3;
+  }
+
+  &-big {
+    @include Big;
+  }
+
+  &-normal {
+    @include Normal;
+  }
+
+  &-small {
+    @include Small;
+  }
+}
