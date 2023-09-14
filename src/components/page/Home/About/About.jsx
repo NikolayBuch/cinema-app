@@ -12,7 +12,7 @@ const About = () => {
       <Header />
       <div className={s.info}>
         <Text size='h2' className={s.title}>
-          Мы база данных фильмов. Филм для нас все. Даже плохие.
+          Мы база данных фильмов.
         </Text>
         <Text size='normal' className={s.description}>
           мы с вами собираем ифомацию различных фильмов , что бы вы смогли найти

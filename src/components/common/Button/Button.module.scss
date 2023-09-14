@@ -1,4 +1,5 @@
 @import "styles/color.scss";
+@import "styles/media.scss";
 
 .root {
   width: auto;
@@ -16,8 +17,8 @@
     border: none;
 
     font-weight: 700;
-    font-size: 20px;
-    line-height: 142%;
+    font-size: 23px;
+    line-height: 122%;
 
     color: $gray;
 
@@ -43,6 +44,12 @@
     &:hover::after {
       transform: scaleX(1);
     }
+
+    @include media(sm) {
+
+    font-size: 16px;
+    line-height: 142%;
+    }
   }
 
   &-button {
@@ -66,5 +73,11 @@
     &:hover {
       transform: scale(1.1);
     }
+    
+    @include media (sm) {
+      width: 230px;
+    }
   }
+
+  
 }
