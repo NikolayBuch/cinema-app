@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/cinema-app/static/css/main.e0855545.css",
-    "main.js": "/cinema-app/static/js/main.b4abb92c.js",
+    "main.css": "/cinema-app/static/css/main.236ef9cc.css",
+    "main.js": "/cinema-app/static/js/main.66c40763.js",
     "static/media/BG.jpg": "/cinema-app/static/media/BG.19ef9cae51d8a58ed5c3.jpg",
     "index.html": "/cinema-app/index.html",
-    "main.e0855545.css.map": "/cinema-app/static/css/main.e0855545.css.map",
-    "main.b4abb92c.js.map": "/cinema-app/static/js/main.b4abb92c.js.map"
+    "main.236ef9cc.css.map": "/cinema-app/static/css/main.236ef9cc.css.map",
+    "main.66c40763.js.map": "/cinema-app/static/js/main.66c40763.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0855545.css",
-    "static/js/main.b4abb92c.js"
+    "static/css/main.236ef9cc.css",
+    "static/js/main.66c40763.js"
   ]
 }
