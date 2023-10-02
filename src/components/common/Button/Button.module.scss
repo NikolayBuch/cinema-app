@@ -46,9 +46,8 @@
     }
 
     @include media(sm) {
-
-    font-size: 16px;
-    line-height: 142%;
+      font-size: 16px;
+      line-height: 142%;
     }
   }
 
@@ -73,11 +72,36 @@
     &:hover {
       transform: scale(1.1);
     }
-    
-    @include media (sm) {
+
+    @include media(sm) {
       width: 230px;
     }
   }
 
+  &-form {
+    width: 350px;
+    height: 60px;
+    margin: 5px 0;
+
+
+    border-radius: 20px;
+    border: 1px solid $grayText;
+    background: $whitButton;
+
+    color: $blackButton;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 142%;
+
+    @include media(sm) {
+      width: 250px;
+      height: 40px;
   
+      border-radius: 15px;
+  
+      font-size: 16px;
+      line-height: 142%;
+    }
+  }
 }

@@ -6,7 +6,7 @@ import Header from 'components/common/Header';
 import Text from 'components/common/Text';
 import Button from 'components/common/Button/Button';
 
-const About = () => {
+const About = ({setActive}) => {
   return (
     <div className={s.root}>
       <Header />
@@ -19,7 +19,7 @@ const About = () => {
           его в одном месте
         </Text>
         <div className={s.button}>
-          <Button color='button' >
+          <Button color='button' onClick={()=> setActive(true)}>
             Добавить фильм{' '}
           </Button>
         </div>

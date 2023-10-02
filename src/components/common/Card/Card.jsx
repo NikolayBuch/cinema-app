@@ -14,9 +14,6 @@ const Card = ({ item }) => {
           <img src={`./img/jpg/Movie/${item.cover}`} alt='movie' />
         </div>
         <div className={s.info}>
-          <Text>
-            <p> {item.name}</p>
-          </Text>
           <Text
             className={cx(
               s.point,
@@ -24,6 +21,9 @@ const Card = ({ item }) => {
               { [s.gray]: item.points <= 7 }
             )}>
             <p>{item.points}</p>
+          </Text>
+          <Text className={s.name} size='big'>
+            <p> {item.name}</p>
           </Text>
         </div>
       </div>

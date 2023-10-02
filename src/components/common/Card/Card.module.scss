@@ -33,12 +33,13 @@
   max-height: 550px;
 
   border-radius: 10px;
+  background: white;
 
-  @include media (d) {
+  @include media(d) {
     height: 45.4vw;
   }
 
-  @include media (sm) {
+  @include media(sm) {
     height: 69.4vw;
     max-height: 250px;
   }
@@ -72,8 +73,20 @@
     object-fit: cover;
   }
 }
+
+.name {
+  position: inherit;
+  top: 0;
+  left: 0;
+
+  margin-left: 10px;
+  margin-top: 70px;
+
+  color: $black;
+}
+
 .point {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 
@@ -87,7 +100,7 @@
   text-align: center;
   color: $white;
 
-  @include media (sm) {
+  @include media(sm) {
     width: 33px;
     height: 25px;
   }
@@ -98,5 +111,5 @@
 }
 
 .gray {
-  background: $greyPoint;
+  background: $grayPoint;
 }

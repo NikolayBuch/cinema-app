@@ -1,13 +1,13 @@
 import React from 'react';
 import { movie } from 'stubs/movie';
 
-import s from './MovieList.module.scss';
+import s from './MoviesList.module.scss';
 
 import Card from 'components/common/Card';
 import Container from 'components/common/Container';
 import Text from 'components/common/Text/Text';
 
-const MovieList = () => {
+const MoviesList = () => {
   return (
     <div className={s.root}>
       <Container>
@@ -24,4 +24,4 @@ const MovieList = () => {
   );
 };
 
-export default MovieList;
+export default MoviesList;

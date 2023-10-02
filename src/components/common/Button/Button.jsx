@@ -5,10 +5,10 @@ import cx from 'classnames';
 import s from './Button.module.scss';
 import modsClasses from 'utils/modsClasses';
 
-const Button = ({ children, color, className }) => {
+const Button = ({ children, color, className, onClick }) => {
   const mods = modsClasses(s, { color });
 
-  return <button className={cx(s.root, mods, className)}>{children}</button>;
+  return <button onClick={onClick} className={cx(s.root, mods, className)}>{children}</button>;
 };
 
 Button.propTypes = {
