@@ -6,12 +6,15 @@ import Text from 'components/common/Text';
 
 import s from './Card.module.scss';
 
-const Card = ({ item }) => {
+const Card = ({ item, onFindMovie }) => {
   return (
-    <div className={s.root}>
+    <div className={s.root} onClick={() => onFindMovie(item)} >
       <div className={s.card}>
-        <div className={s.cover}>
-          <img src={`./img/jpg/Movie/${item.cover}`} alt='movie' />
+        <div className={s.cover}> 
+        {item.cover ? 
+        <img src={`./img/jpg/Movie/${item.cover}`} alt='' /> : 
+        <img src={`./img/jpg/error.jpg`} alt='' /> 
+        }
         </div>
         <div className={s.info}>
           <Text
@@ -33,6 +36,7 @@ const Card = ({ item }) => {
 
 Card.propTypes = {
   item: PropTypes.object,
+  onFindMovie: PropTypes.func,
 };
 
 export default Card;

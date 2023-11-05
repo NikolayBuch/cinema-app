@@ -1,22 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import cx from 'classnames';
+
+import { ModalContext } from 'context/modalContext';
 
 import s from './Modal.module.scss';
 
-const Modal = ({ active, setActive, children }) => {
-  return (
-    <div
-      className={cx(s.root, { [s.active]: active })}
-      onClick={() => 
-      setActive(false)
-      // console.log(setActive)
-      }>
-      <div className={cx(s.content, { [s.active]: active })} onClick={(e) => e.stopPropagation()}>
-        {children}
+const Modal = () => {
+  const { modalContent, handleModal, modal } = useContext(ModalContext);
+
+  return modal 
+  ? (
+    <div className={cx(s.root, { [s.active]: handleModal })}>
+      <div className={s.background} onClick={() => handleModal()}></div>
+
+      <div className={cx(s.content, { [s.active]: handleModal })}>
+        {modalContent}
       </div>
     </div>
-  );
+  ) 
+  : null;
 };
 
 export default Modal;

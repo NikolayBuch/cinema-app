@@ -1,0 +1,95 @@
+@import "styles/color";
+@import "styles/media";
+
+.root {
+  max-width: 1200px;
+  min-height: 650px;
+  min-width: 785px;
+  padding: 20px;
+
+  background: #000;
+  border-radius: 20px;
+  color: white;
+
+  @include media(d) {
+    min-width: 453px;
+    min-height: auto;
+  }
+  @include media(sm) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 190px;
+
+  }
+}
+.cover {
+  position: absolute;
+  max-width: 400px;
+  max-height: 600px;
+  width: 33%;
+  height: 45.5vw;
+
+  object-fit: cover;
+  border-radius: 10px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40%;
+
+  @include media(d) {
+    height: 45.5vw;
+  }
+  @include media(sm) {
+    align-items: center;
+    justify-content: flex-end;
+    height: auto;
+    margin-top: 70%;
+
+    margin-left: 0;
+
+    text-align: center;
+  }
+}
+
+.description {
+  margin-left: 40%;
+
+  @include media(d) {
+    margin-left: 0;
+    margin-top: 2%;
+  }
+}
+
+.general {
+  display: flex;
+
+  color: gray;
+
+  p {
+    margin: 10px;
+  }
+}
+
+.green {
+  color: $greenPoint;
+}
+
+.gray {
+  color: $grayPoint;
+}
+
+.red {
+  color: $redText;
+}

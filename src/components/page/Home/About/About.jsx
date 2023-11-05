@@ -1,12 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 
 import s from './About.module.scss';
 import Header from 'components/common/Header';
 import Text from 'components/common/Text';
 import Button from 'components/common/Button/Button';
+import { ModalContext } from 'context/modalContext';
+import Form from 'components/page/Home/Form';
 
-const About = ({setActive}) => {
+const About = () => {
+  const { handleModal } = useContext(ModalContext);
+
   return (
     <div className={s.root}>
       <Header />
@@ -19,8 +22,8 @@ const About = ({setActive}) => {
           его в одном месте
         </Text>
         <div className={s.button}>
-          <Button color='button' onClick={()=> setActive(true)}>
-            Добавить фильм{' '}
+          <Button color='button' onClick={() => handleModal(<Form />)}>
+            Добавить фильм
           </Button>
         </div>
       </div>

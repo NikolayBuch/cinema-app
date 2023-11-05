@@ -10,6 +10,7 @@
   height: 800px;
   background: url(../../../../../public/img/jpg/BG.jpg);
   background-size: 100%;
+  background-repeat: no-repeat;
 
   &::before {
     content: "";

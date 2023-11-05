@@ -3,39 +3,24 @@
 
 .root {
   position: relative;
-  max-width: 50%;
   width: 100%;
 
-  padding: 15px;
+  margin: 5px 0;
 
   box-sizing: border-box;
-
-  @include media(d) {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  @include media(sm) {
-    padding: 5px;
-  }
-}
-.wrapper {
-  position: relative;
 }
 
-.input {
+.textarea {
   position: relative;
   width: 100%;
-  height: 68px;
-  padding-left: 20px;
+  height: 180px;
+  padding: 20px;
   z-index: 2;
 
   outline: none;
   border-radius: 20px;
   background: none;
-  border: none;
-
-  transition: border 50ms ease;
+  border: 1px solid $grayText;
 
   font-weight: 400;
   font-size: 20px;
@@ -43,10 +28,6 @@
   color: $whiteText;
 
   @include media(sm) {
-    height: 43px;
-
-    border-radius: 15px;
-
     font-size: 16px;
     line-height: 142%;
   }
@@ -55,28 +36,9 @@
     color: $grayText;
   }
 
-  &:focus {
+  &:focus + .border {
     border: 2px solid $whiteText;
   }
-}
-
-.border {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-
-  border: 1px solid $grayText;
-  border-radius: 20px;
-
-  @include media(sm) {
-    border-radius: 15px;
-  }
-
-  transition: border 150ms ease;
 }
 
 .error {

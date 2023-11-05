@@ -2,36 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import s from './Input.module.scss';
-import Text from 'components/common/Text/Text';
+import Text from 'components/common/Text';
 
-const Input = ({
-  type,
-  placeholder,
+import s from './Textarea.module.scss';
+
+const Textarea = ({
   onChange,
   value,
+  type,
+  placeholder,
   onBlur,
-  isErrorMessage,
   isError,
-  isDirt,
   isEmpty,
+  isDirt,
+  isErrorMessage,
 }) => {
   return (
     <span className={s.root}>
-      <div className={s.wrapper}>
-        <input
-          className={s.input}
-          onChange={onChange}
-          value={value}
-          type={type}
-          placeholder={placeholder}
-          onBlur={onBlur}
-        />
-        <span
-          className={cx(s.border, {
-            [s.errorBorder]: isError &&  isEmpty,
-          })}></span>
-      </div>
+      <textarea
+        className={cx(s.textarea, {
+          [s.errorBorder]: isError,
+        })}
+        onChange={onChange}
+        value={value}
+        type={type}
+        placeholder={placeholder}
+        onBlur={onBlur}></textarea>
+      <span
+        className={cx(s.border, {
+          [s.errorBorder]: isError,
+        })}></span>
 
       <Text
         size='small'
@@ -44,7 +44,7 @@ const Input = ({
   );
 };
 
-Input.propTypes = {
+Textarea.propTypes = {
   type: PropTypes.any,
   placeholder: PropTypes.any,
   onChange: PropTypes.func,
@@ -56,4 +56,4 @@ Input.propTypes = {
   isEmpty: PropTypes.bool,
 };
 
-export default Input;
+export default Textarea;

@@ -1,9 +1,33 @@
+@import "styles/media.scss";
 .root {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+
+  max-width: 1320px;
+  padding: 25px;
 
   background: #000;
   border-radius: 20px;
-  padding: 25px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+  padding-bottom: 15px;
+
+  @include media(d) {
+    margin: -10px;
+    padding-bottom: 10px;
+  }
+  @include media(sm) {
+    margin: -5px;
+    padding-bottom: 5px;
+  }
+}
+
+.error {
+  color: red;
 }
