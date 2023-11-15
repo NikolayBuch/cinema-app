@@ -15,20 +15,39 @@ const useForm = (callback) => {
 
     switch (name) {
       case 'name':
+        if (value.length < 1) {
+          setErrors({
+            ...errors,
+            name:'Поле не должно быть пустым'})
+        } else if (!regularEnglish.test(String(value).toLowerCase()) ){
+         setErrors(omit(errors, "name")); 
+         setErrors({
+          ...errors,
+          name: 'Название фильма должно быть на Английском'
+         })
+        }else {
+          setErrors(omit(errors, "name")); 
+         }
         // if (!regularEnglish.test(String(value).toLowerCase()) ) {
         //   setErrors({
         //     ...errors,
         //     name:'Название фильма должно быть на Английском'})
-        // } else {
+        // } else if (value.length < 0 ){
         //  setErrors(omit(errors, "name")); 
-        // }
+        //  setErrors({
+        //   ...errors,
+        //   name: 'поле не должно быть пустым'
+        //  })
+        // }else {
+        //   setErrors(omit(errors, "name")); 
+        //  }
         
-        !regularEnglish.test(String(value).toLowerCase()) 
-        ? setErrors({
-          ...errors,
-          name:'Название фильма должно быть на Английском'
-      })
-        : setErrors(omit(errors, "name")); 
+      //   !regularEnglish.test(String(value).toLowerCase()) 
+      //   ? setErrors({
+      //     ...errors,
+      //     name:'Название фильма должно быть на Английском'
+      // })
+      //   : setErrors(omit(errors, "name")); 
          
         break;
         case 'russiaName':
