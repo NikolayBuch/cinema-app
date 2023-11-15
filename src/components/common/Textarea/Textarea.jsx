@@ -7,36 +7,35 @@ import Text from 'components/common/Text';
 import s from './Textarea.module.scss';
 
 const Textarea = ({
+  name,
   onChange,
   value,
   type,
   placeholder,
-  onBlur,
-  isError,
-  isEmpty,
-  isDirt,
   isErrorMessage,
 }) => {
   return (
     <span className={s.root}>
-      <textarea
-        className={cx(s.textarea, {
-          [s.errorBorder]: isError,
-        })}
-        onChange={onChange}
-        value={value}
-        type={type}
-        placeholder={placeholder}
-        onBlur={onBlur}></textarea>
-      <span
-        className={cx(s.border, {
-          [s.errorBorder]: isError,
-        })}></span>
+      <div className={s.wrapper}>
+        <textarea
+          className={cx(s.textarea, {
+            // [s.errorBorder]: isError,
+          })}
+          onChange={onChange}
+          name={name}
+          value={value}
+          type={type}
+          placeholder={placeholder}></textarea>
+        <span
+          className={cx(s.border, {
+            [s.errorBorder]: isErrorMessage,
+          })}></span>
+      </div>
 
       <Text
         size='small'
         className={cx(s.error, s.hide, {
-          [s.visible]: isError || (isEmpty && isDirt),
+          [s.visible]: isErrorMessage,
         })}>
         {isErrorMessage}
       </Text>

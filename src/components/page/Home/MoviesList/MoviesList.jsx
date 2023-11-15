@@ -5,12 +5,12 @@ import s from './MoviesList.module.scss';
 import Card from 'components/common/Card';
 import Container from 'components/common/Container';
 import MovieItem from 'components/common/MovieItem';
-import Text from 'components/common/Text/Text';
+import Text from 'components/common/Text';
 import { Context } from 'context/context';
 import { ModalContext } from 'context/modalContext';
 
 const MoviesList = () => {
-  const { movies } = useContext(Context);
+  const { moviesList } = useContext(Context);
   const { handleModal } = useContext(ModalContext);
 
   const findMovie = useCallback(
@@ -29,7 +29,7 @@ const MoviesList = () => {
           </Text>
         </div>
         <div className={s.movies}>
-          {movies.map((item) => (
+          {moviesList.map((item) => (
             <Card onFindMovie={findMovie} item={item} key={item.id} />
           ))}
         </div>

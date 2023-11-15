@@ -1,15 +1,14 @@
 import './styles/App.scss';
 import Home from './components/page/Home/Home'
-// import ModalProvider from 'components/providers/modalProvider';
 import {ModalProvider} from 'context/modalContext'
-import { useLocalStorage } from 'hooks/useLocalStoreg';
-import { movie } from 'stubs/movie';
+import { useLocalStorage } from 'hooks/useLocalStorage';
+import { movies } from 'stubs/movies';
 import { Context } from 'context/context';
 
 function App() {
 
 
-  const [movies, setMovies] = useLocalStorage('movies', movie);
+  const [moviesList, setMoviesList] = useLocalStorage('movies', movies);
   return (
 
 
@@ -17,13 +16,11 @@ function App() {
     <div className="App">
 
       <Context.Provider value={{
-        movies,
-        setMovies
+        moviesList,
+        setMoviesList
       }}>
         <ModalProvider>
-      {/* <ModalProvider> */}
       <Home/>
-      {/* </ModalProvider> */}
       </ModalProvider>
       </Context.Provider>
 

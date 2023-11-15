@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import Input from 'components/common/Input/Input';
-import Button from 'components/common/Button/Button';
+import Input from 'components/common/Input';
+import Button from 'components/common/Button';
 import Textarea from 'components/common/Textarea';
 
 import s from './Form.module.scss';
@@ -10,7 +10,7 @@ import { Context } from 'context/context';
 import { ModalContext } from 'context/modalContext';
 
 const Form = () => {
-  const { movies, setMovies } = useContext(Context);
+  const { moviesList, setMoviesList } = useContext(Context);
   const { handleModal } = useContext(ModalContext);
 
   const name = useInput('', { englishInput: true });
@@ -33,8 +33,8 @@ const Form = () => {
       points: points.value,
     };
 
-    const newMoviesList = [...movies, newMovie];
-    setMovies(newMoviesList);
+    const newMoviesList = [...moviesList, newMovie];
+    setMoviesList(newMoviesList);
     handleModal();
   };
 

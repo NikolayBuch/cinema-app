@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import s from './MovieItem.module.scss';
-import Text from 'components/common/Text/Text';
+import Text from 'components/common/Text';
 
 const MovieItem = ({ item }) => {
   return (
