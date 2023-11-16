@@ -42,21 +42,17 @@
 
 .description {
   width: 90%;
-  margin: 12% 5%;
+  margin: 12% auto;
 
   color: $white;
   text-align: center;
   @include media(sm) {
-    margin: 20% 5%;
+    margin: 20% auto;
   }
 }
 
 .button {
   display: flex;
   justify-content: center;
-  margin: 0 30%;
-
-  @include media(sm) {
-    margin: 0 15%;
-  }
+  margin: 0 auto;
 }

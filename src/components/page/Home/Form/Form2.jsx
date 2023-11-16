@@ -19,7 +19,7 @@ const Form = () => {
     handleModal();
   };
 
-  const { value, handleChange, values, errors, handleSubmit } = useForm(formMovie);
+  const { handleChange, values, errors, handleSubmit } = useForm(formMovie);
 
   // const addNewMovie = (e) => {
   //   e.preventDefault();
@@ -32,7 +32,7 @@ const Form = () => {
   //   handleModal();
 
   // };
-  console.log(values)
+  console.log(Object.keys(errors));
   return (
     <form className={s.root} onSubmit={handleSubmit}>
       <div className={s.list}>
@@ -69,7 +69,6 @@ const Form = () => {
           type='text'
           placeholder='Оценка фильма'
           onChange={handleChange}
-          // value={values.points}
           isErrorMessage={errors.points}
         />
       </div>
@@ -82,7 +81,7 @@ const Form = () => {
       />
 
       <Button
-        // disabled
+        disabled={Object.keys(errors).length >= 1}
         onClick={handleSubmit}
         color='form'>
         Добавить

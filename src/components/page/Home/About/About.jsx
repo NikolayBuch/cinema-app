@@ -9,8 +9,10 @@ import Form from 'components/page/Home/Form';
 
 const About = () => {
   const { handleModal } = useContext(ModalContext);
-  
 
+  const openForm = () => {
+    handleModal(<Form />);
+  };
 
   return (
     <div className={s.root}>
@@ -24,7 +26,7 @@ const About = () => {
           его в одном месте
         </Text>
         <div className={s.button}>
-          <Button color='button' onClick={() => handleModal(<Form />)}>
+          <Button color='button' onClick={() => openForm()}>
             Добавить фильм
           </Button>
         </div>

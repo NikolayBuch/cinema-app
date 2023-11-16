@@ -1,5 +1,5 @@
 import './styles/App.scss';
-import Home from './components/page/Home/Home'
+import Home from './components/page/Home'
 import {ModalProvider} from 'context/modalContext'
 import { useLocalStorage } from 'hooks/useLocalStorage';
 import { movies } from 'stubs/movies';
