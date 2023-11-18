@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { omit } from 'lodash'
 
 const useForm = (callback) => {
-  const [value, setValue] = useState({})
   const [values, setValues] = useState({})
   const [errors, setErrors] = useState({})
 
@@ -143,45 +142,15 @@ const useForm = (callback) => {
 
     let name = event.target.name;
     let value = event.target.value;
-    // setValue(event.target.value)
-    console.log(value)
 
     validate(event, name, value)
 
     setValues({
       ...values,
       [name]: value,
+      id: Date.now()
     })
 
-    //   switch (name) {
-    //     case 'points':
-    //       value = value.replace(/\D/g, '');
-
-
-
-    //       if (value.length <= 1) {
-    //         return ;
-    //       } else if (value.length <= 2) {
-    //         setValues({ ...values, [name]: `${value.slice(0, 1)}.${value.slice(1)}`}) ;
-    //       }
-    // // setValues( {...values, [name]: value})
-
-
-    //       break;}
-
-    //     case 'date':
-    //     value = value.replace(/\D/g, '');
-
-    //     if (value.length <= 4) {
-    //       setValue(value);
-    //     } else if (value.length <= 4) {
-    //       setValue(`${value.slice(3)}`);
-    //     }
-    //     break;
-
-    //   default:
-    //     break;
-    // }
   }
 
   const handleSubmit = (event) => {
@@ -191,7 +160,6 @@ const useForm = (callback) => {
   }
 
   return {
-    value,
     values,
     errors,
     handleChange,

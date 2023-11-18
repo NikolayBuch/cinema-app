@@ -32,7 +32,7 @@ const Form = () => {
   //   handleModal();
 
   // };
-  console.log(Object.keys(errors));
+  console.log(values);
   return (
     <form className={s.root} onSubmit={handleSubmit}>
       <div className={s.list}>
