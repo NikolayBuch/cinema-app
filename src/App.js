@@ -1,9 +1,9 @@
 import './styles/App.scss';
-import Home from './components/page/Home'
-import {ModalProvider} from 'context/modalContext'
-import { useLocalStorage } from 'hooks/useLocalStorage';
-import { movies } from 'stubs/movies';
-import { Context } from 'context/context';
+import Home from './components/pages/Home'
+import { ModalProvider } from './context/modalContext'
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { movies } from './stubs/movies';
+import { Context } from './context/context';
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
   return (
 
 
-    
+
     <div className="App">
 
       <Context.Provider value={{
@@ -20,8 +20,8 @@ function App() {
         setMoviesList
       }}>
         <ModalProvider>
-      <Home/>
-      </ModalProvider>
+          <Home />
+        </ModalProvider>
       </Context.Provider>
 
     </div>

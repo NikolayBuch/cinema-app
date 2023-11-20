@@ -5,7 +5,7 @@ import Header from 'components/common/Header';
 import Text from 'components/common/Text';
 import Button from 'components/common/Button';
 import { ModalContext } from 'context/modalContext';
-import Form from 'components/page/Home/Form';
+import Form from 'components/pages/Home/Form';
 
 const About = () => {
   const { handleModal } = useContext(ModalContext);

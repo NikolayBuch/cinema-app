@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { omit } from 'lodash'
 
 const useForm = (callback) => {
@@ -41,12 +41,6 @@ const useForm = (callback) => {
         } else {
           setErrors(omit(errors, "russiaName"));
         }
-        //   !regularRussian.test(String(value).toLowerCase()) 
-        //   ?  setErrors({
-        //     ...errors,
-        //     russiaName:'Название фильма должно быть на Руссокм'
-        // })
-        // : setErrors(omit(errors, "russiaName")); 
 
         break;
       case 'date':
@@ -64,13 +58,6 @@ const useForm = (callback) => {
         } else {
           setErrors(omit(errors, "date"));
         }
-
-        // !value.length === 4
-        //   ? setErrors({
-        //     ...errors,
-        //     date: 'Введите коректный год'
-        //   })
-        //   : setErrors(omit(errors, 'date'))
         break;
       case 'country':
         if (value.length < 1) {
@@ -87,12 +74,6 @@ const useForm = (callback) => {
         } else {
           setErrors(omit(errors, "country"));
         }
-        // !regularRussian.test(String(value).toLowerCase())
-        //   ? setErrors({
-        //     ...errors,
-        //     country: 'Название страны должно быть на русском'
-        //   })
-        //   : setErrors(omit(errors, "country"));
         break;
       case 'points':
         value.length === 3
@@ -123,12 +104,6 @@ const useForm = (callback) => {
         } else {
           setErrors(omit(errors, "description"));
         }
-        // !regularRussian.test(String(value).toLowerCase())
-        //   ? setErrors({
-        //     ...errors,
-        //     description: 'Описание должно быть на русском'
-        //   })
-        //   : setErrors(omit(errors, "description"));
         break;
       default:
         break;

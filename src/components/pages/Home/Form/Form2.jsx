@@ -21,17 +21,6 @@ const Form = () => {
 
   const { handleChange, values, errors, handleSubmit } = useForm(formMovie);
 
-  // const addNewMovie = (e) => {
-  //   e.preventDefault();
-
-  //   const newMovie = {
-
-  //   };
-  //   const newMoviesList = [...moviesList, newMovie];
-  //   setMoviesList(newMoviesList);
-  //   handleModal();
-
-  // };
   console.log(values);
   return (
     <form className={s.root} onSubmit={handleSubmit}>
