@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { omit } from 'lodash'
 
-const useForm = (callback) => {
+const useForm = (initialValue, callback) => {
   const [values, setValues] = useState({})
   const [errors, setErrors] = useState({})
 
@@ -10,6 +10,7 @@ const useForm = (callback) => {
     const regularRussian = /[а-яА-Я]/;
 
     switch (name) {
+
       case 'name':
         if (value.length < 1) {
           setErrors({
@@ -26,6 +27,7 @@ const useForm = (callback) => {
           setErrors(omit(errors, "name"));
         }
         break;
+
       case 'russiaName':
         if (value.length < 1) {
           setErrors({
@@ -41,15 +43,15 @@ const useForm = (callback) => {
         } else {
           setErrors(omit(errors, "russiaName"));
         }
-
         break;
+
       case 'date':
         if (value.length < 1) {
           setErrors({
             ...errors,
             date: 'Поле не должно быть пустым'
           })
-        } else if (value.length < 4 || value.length > 4) {
+        } else if (value.length < 4) {
           setErrors(omit(errors, "date"));
           setErrors({
             ...errors,
@@ -59,6 +61,7 @@ const useForm = (callback) => {
           setErrors(omit(errors, "date"));
         }
         break;
+
       case 'country':
         if (value.length < 1) {
           setErrors({
@@ -75,8 +78,9 @@ const useForm = (callback) => {
           setErrors(omit(errors, "country"));
         }
         break;
+
       case 'points':
-        value.length === 3
+        value.length <= 1
           ? setErrors({
             ...errors,
             points: 'Введите коректный балл'
@@ -120,12 +124,50 @@ const useForm = (callback) => {
 
     validate(event, name, value)
 
-    setValues({
-      ...values,
-      [name]: value,
-      id: Date.now()
-    })
+    switch (name) {
 
+      case 'date':
+        value = value.replace(/\D/g, '')
+        if (value.length <= 4) {
+          setValues({
+            ...values,
+            [name]: value,
+            id: Date.now()
+          })
+        } else if (value.length >= 4) {
+          setValues({
+            ...values,
+            [name]: `${value.slice(0, 4)}`,
+            id: Date.now()
+          })
+        }
+        break;
+
+      case 'points':
+        value = value.replace(/\D/g, '')
+        if (value.length <= 1) {
+          setValues({
+            ...values,
+            [name]: value,
+            id: Date.now()
+          })
+        } else if (value.length <= 2) {
+          setValues({
+            ...values,
+            [name]: `${value.slice(0, 1)}.${value.slice(1)}`,
+            id: Date.now()
+          })
+        }
+        break;
+
+      default:
+        setValues({
+          ...values,
+          [name]: value,
+          id: Date.now()
+        })
+        break;
+    }
   }
 
   const handleSubmit = (event) => {

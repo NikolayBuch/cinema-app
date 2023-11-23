@@ -8,6 +8,7 @@ import s from './Form.module.scss';
 import useForm from 'hooks/useForm';
 import { Context } from 'context/context';
 import { ModalContext } from 'context/modalContext';
+import useInput from 'hooks/useInput2';
 
 const Form = () => {
   const { moviesList, setMoviesList } = useContext(Context);
@@ -19,13 +20,17 @@ const Form = () => {
     handleModal();
   };
 
-  const { handleChange, values, errors, handleSubmit } = useForm(formMovie);
+  const { handleChange, values, errors, handleSubmit, onChange } = useForm(formMovie);
 
-  console.log(values);
+// const name = useInput('')
+// const russiaName = useInput('')
+
+console.log(values)
   return (
     <form className={s.root} onSubmit={handleSubmit}>
       <div className={s.list}>
         <Input
+          value = {values.name}
           name='name'
           type='text'
           placeholder='Английское название фильма'
@@ -44,6 +49,7 @@ const Form = () => {
           type='text'
           placeholder='Дата выхода'
           onChange={handleChange}
+          value={values.date}
           isErrorMessage={errors.date}
         />
         <Input
@@ -57,6 +63,7 @@ const Form = () => {
           name='points'
           type='text'
           placeholder='Оценка фильма'
+          value={values.points}
           onChange={handleChange}
           isErrorMessage={errors.points}
         />

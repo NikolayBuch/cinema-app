@@ -10,6 +10,7 @@ const Home = () => {
     <div className={s.root}>
       <About />
       <MoviesList />
+
     </div>
   );
 };
