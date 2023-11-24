@@ -8,13 +8,14 @@ import s from './Card.module.scss';
 
 const Card = ({ item, onFindMovie }) => {
   return (
-    <div className={s.root} onClick={() => onFindMovie(item)} >
+    <div className={s.root} onClick={() => onFindMovie(item)}>
       <div className={s.card}>
-        <div className={s.cover}> 
-        {item.cover ? 
-        <img src={`./img/jpg/Movie/${item.cover}`} alt='' /> : 
-        <img src={`./img/jpg/error.jpg`} alt='' /> 
-        }
+        <div className={s.cover}>
+          {item.cover ? (
+            <img src={`./img/jpg/Movie/${item.cover}`} alt='' />
+          ) : (
+            <img src={`./img/jpg/error.jpg`} alt='' />
+          )}
         </div>
         <div className={s.info}>
           <Text

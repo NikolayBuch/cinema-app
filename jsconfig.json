@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "paths": {
       "common/*": [
-        "./src/components/common/*"
+        "components/common/*"
       ],
       "constants/*": [
         "constants/*"
