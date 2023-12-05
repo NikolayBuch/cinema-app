@@ -11,6 +11,7 @@ const useForm = (callback) => {
     country: '',
     points: '',
     description: '',
+    
   })
   const [errors, setErrors] = useState({})
   const [isEmpty, setEmpty] = useState(true)
@@ -51,8 +52,9 @@ const useForm = (callback) => {
     validate(event, name, value)
     const mask = masks[name](value)
     setValues({ ...values, [name]: mask, id: Date.now() })
-
+console.log(masks.points(value))
   }
+
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault();

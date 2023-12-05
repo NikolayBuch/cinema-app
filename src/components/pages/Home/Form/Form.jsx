@@ -18,9 +18,10 @@ const Form = () => {
     setMoviesList(newMoviesList);
     handleModal();
   };
-
   const { handleChange, values, errors, handleSubmit } =
     useForm(formMovie);
+console.log(values)
+
   return (
     <form className={s.root} onSubmit={handleSubmit}>
       <div className={s.list}>

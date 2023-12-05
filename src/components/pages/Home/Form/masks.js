@@ -25,8 +25,8 @@ const masks = {
     value = value.replace(/\D/g, '')
     if (value.length <= 1) {
       return value
-    } else if (value.length <= 2) {
-      return `${value.slice(0, 1)}.${value.slice(1)}`
+    } else if (value.length >= 2) {
+      return `${value.slice(0, 1)}.${value.slice(1, 2)}`
     }
   },
 
