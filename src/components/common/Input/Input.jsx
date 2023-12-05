@@ -12,11 +12,13 @@ const Input = ({
   onChange,
   value,
   isErrorMessage,
+  required
 }) => {
   return (
     <span className={s.root}>
       <div className={s.wrapper}>
         <input
+        required= {required}
         name={name}
           className={s.input}
           onChange={onChange}
